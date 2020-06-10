@@ -70,17 +70,22 @@ formulario.addEventListener('submit', validarFormulario)
 //Valida si los correo son iguales
     function validarCorreo(e){
         e.preventDefault()
-
-        // console.log(correo1.value)
         
 
-        if(correo1.value === correo2.value) {
-            correoNoIgual.style.display = 'none'
-        } else {
+        if(correo1.value !== correo2.value) {
             correoNoIgual.style.display = 'block'
         }
     }
 
+//Valida si as contraseñas son iguales
+
+    function validarContraseñaNoigual(e){
+        e.preventDefault()
+
+        if(contraseña1.value !== contraseña2.value) {
+            contraseñaNoIgual.style.display = 'block'
+        }
+    } 
 
 
     function validarFormulario(e){
@@ -89,6 +94,7 @@ formulario.addEventListener('submit', validarFormulario)
         validarEspacios(e)
         validarTerminos(e)
         validarCorreo(e)
+        validarContraseñaNoigual(e)
     }
 
 //})

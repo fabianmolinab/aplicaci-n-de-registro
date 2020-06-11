@@ -113,6 +113,56 @@ formulario.addEventListener('submit', validarFormulario)
             }
             
         }
+        for(i=0; i<contraseña2.value.length; i++){
+            if(contraseña2.value.charCodeAt(i) >= 48 && contraseña2.value.charCodeAt(i) <= 57) {
+
+                errorNumeros.syle.display = 'none'
+            }else {
+                errorNumeros.styles.display = 'block'
+            }
+        }
+    }
+
+//Valida si las contraseñas contienen mayusculas y minnusculas
+
+    function validarMayusculas(e){
+        e.preventDefault()
+
+        for(i=0; i<contraseña1.value.length; i++){
+            if(contraseña1.value.charCodeAt(i) >= 65 && contraseña1.value.charCodeAt(i) <=90) {
+
+                errorMayMin.style.display = 'none'
+            }else {
+                errorMayMin.style.display = 'block'
+            }
+        }
+
+        for(i=0; i<contraseña2.value.length; i++){
+            if(contraseña2.value.charCodeAt(i) >= 65 && contraseña2.value.charCodeAt(i) <=90) {
+
+                errorMayMin.style.display = 'none'
+            }else {
+                errorMayMin.style.display = 'block'
+            }
+        }
+
+        for(i=0; i<contraseña1.value.length; i++){
+            if(contraseña1.value.charCodeAt(i) >= 97 && contraseña1.value.charCodeAt(i) <=122) {
+
+                errorMayMin.style.display = 'none'
+            }else {
+                errorMayMin.style.display = 'block'
+            }
+        }
+
+        for(i=0; i<contraseña2.value.length; i++){
+            if(contraseña2.value.charCodeAt(i) >= 97 && contraseña2.value.charCodeAt(i) <=122) {
+
+                errorMayMin.style.display = 'none'
+            }else {
+                errorMayMin.style.display = 'block'
+            }
+        }
     }
 
 
@@ -127,6 +177,7 @@ formulario.addEventListener('submit', validarFormulario)
         validarContraseñaNoigual(e)
         validarCaracteres(e)
         validarNumeros(e)
+        validarMayusculas(e)
     }
 
 //})

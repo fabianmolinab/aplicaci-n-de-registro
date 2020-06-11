@@ -7,8 +7,8 @@
         contraseña1 = document.querySelector('#contraseña-1'),
         contraseña2 = document.querySelector('#contraseña-2'),
         condiciones = document.querySelector('#condiciones'),
-        error = document.querySelector('.error')
-
+        error = document.getElementsByClassName('error')
+        console.log(error)
 // Variables de Errores
     let errorBlanco = document.querySelector('#error-blanco'),
         correoNoIgual = document.querySelector('#correo-noIgual'),
@@ -77,7 +77,7 @@ formulario.addEventListener('submit', validarFormulario)
         }
     }
 
-//Valida si as contraseñas son iguales
+//Valida si las contraseñas son iguales
 
     function validarContraseñaNoigual(e){
         e.preventDefault()
@@ -87,14 +87,46 @@ formulario.addEventListener('submit', validarFormulario)
         }
     } 
 
+//Valida las contraseñas el numero minimo de caracteres 8
+    function validarCaracteres(e){
+        e.preventDefault()
+
+        if(contraseña1.value.length <8 ){
+            errorCaracteres.style.display = 'block'
+        }
+
+        if(contraseña2.value.length <8 ){
+            errorCaracteres.style.display = 'block'
+        }
+    }
+
+//Valida si las contraseñas contienen numeros
+    function validarNumeros(e){
+        e.preventDefault()
+
+        for(i=0; i<contraseña1.value.length; i++){
+            if(contraseña1.value.charCodeAt(i) >= 48 && contraseña1.value.charCodeAt(i) <= 57) {
+                
+				errorNumeros.style.display = 'none'		
+            }else{
+                errorNumeros.style.display = 'block'
+            }
+            
+        }
+    }
+
+
 
     function validarFormulario(e){
-        error.style.display = 'none'
+
+        error.innerHTML = ''
 
         validarEspacios(e)
         validarTerminos(e)
         validarCorreo(e)
         validarContraseñaNoigual(e)
+        validarCaracteres(e)
+        validarNumeros(e)
     }
 
 //})

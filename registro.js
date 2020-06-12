@@ -8,7 +8,6 @@
         contraseña2 = document.querySelector('#contraseña-2'),
         condiciones = document.querySelector('#condiciones'),
         error = document.getElementsByClassName('error')
-        console.log(error)
 // Variables de Errores
     let errorBlanco = document.querySelector('#error-blanco'),
         correoNoIgual = document.querySelector('#correo-noIgual'),
@@ -91,6 +90,7 @@ formulario.addEventListener('submit', validarFormulario)
     function validarCaracteres(e){
         e.preventDefault()
 
+
         if(contraseña1.value.length <8 ){
             errorCaracteres.style.display = 'block'
         }
@@ -104,39 +104,46 @@ formulario.addEventListener('submit', validarFormulario)
     function validarNumeros(e){
         e.preventDefault()
 
-        for(i=0; i<contraseña1.value.length; i++){
-            if(contraseña1.value.charCodeAt(i) >= 48 && contraseña1.value.charCodeAt(i) <= 57) {
-                
-				errorNumeros.style.display = 'none'		
-            }else{
+        let numeros = "0123456789",
+            contraseña1v = contraseña1.value,
+            contraseña2v = contraseña2.value
+
+        for(i=0;i<contraseña1v.length; i++){
+            
+            if(numeros.indexOf(contraseña1v.charAt(i),0)!=-1){
+                errorNumeros.style.display = 'none'	
+            }else {
                 errorNumeros.style.display = 'block'
             }
-            
         }
-        for(i=0; i<contraseña2.value.length; i++){
-            if(contraseña2.value.charCodeAt(i) >= 48 && contraseña2.value.charCodeAt(i) <= 57) {
 
-                errorNumeros.syle.display = 'none'
+        for(i=0;i<contraseña2v.length; i++){
+            
+            if(numeros.indexOf(contraseña2v.charAt(i),0)!=-1){
+                errorNumeros.style.display = 'none'	
             }else {
-                errorNumeros.styles.display = 'block'
+                errorNumeros.style.display = 'block'
             }
         }
     }
-
+        
 //Valida si las contraseñas contienen mayusculas y minnusculas
 
     function validarMayusculas(e){
         e.preventDefault()
 
+        
+
         for(i=0; i<contraseña1.value.length; i++){
             if(contraseña1.value.charCodeAt(i) >= 65 && contraseña1.value.charCodeAt(i) <=90) {
-
+                console.log('entre')
                 errorMayMin.style.display = 'none'
             }else {
+                
                 errorMayMin.style.display = 'block'
             }
         }
-
+        
         for(i=0; i<contraseña2.value.length; i++){
             if(contraseña2.value.charCodeAt(i) >= 65 && contraseña2.value.charCodeAt(i) <=90) {
 
@@ -145,6 +152,10 @@ formulario.addEventListener('submit', validarFormulario)
                 errorMayMin.style.display = 'block'
             }
         }
+    }
+
+    function validarMinusculas(e) {
+        e.preventDefault()
 
         for(i=0; i<contraseña1.value.length; i++){
             if(contraseña1.value.charCodeAt(i) >= 97 && contraseña1.value.charCodeAt(i) <=122) {
@@ -164,6 +175,32 @@ formulario.addEventListener('submit', validarFormulario)
             }
         }
     }
+//Valida que deba contener caracteres especiales
+    function validarCaracteresEsp(e){
+        e.preventDefault()
+
+        for(i=0; i<contraseña1.value.length; i++){
+            if(contraseña1.value.charCodeAt(i) >=33 && contraseña1.value.charCodeAt(i) <=47) {
+                
+                errorCaracteresEsp.style.display = 'none'
+            }else {
+            
+                errorCaracteresEsp.style.display = 'block'
+            }
+        }
+
+        for(i=0; i<contraseña2.value.length; i++){
+            if(contraseña2.value.charCodeAt(i) >=33 && contraseña2.value.charCodeAt(i) <=47) {
+                
+                errorCaracteresEsp.style.display = 'none'
+            }else {
+            
+                errorCaracteresEsp.style.display = 'block'
+            }
+        }
+    }
+
+
 
 
 
@@ -178,6 +215,8 @@ formulario.addEventListener('submit', validarFormulario)
         validarCaracteres(e)
         validarNumeros(e)
         validarMayusculas(e)
+        validarMinusculas(e)
+        validarCaracteresEsp(e)
     }
 
 //})

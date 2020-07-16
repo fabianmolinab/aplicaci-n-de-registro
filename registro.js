@@ -104,7 +104,7 @@ formulario.addEventListener('submit', validarFormulario)
     function validarNumeros(e){
         e.preventDefault()
 
-        let numeros = "0123456789",
+        let numeros = [1,2,3,4,5,6,7,8,9,10],
             contraseña1v = contraseña1.value,
             contraseña2v = contraseña2.value
 
@@ -136,7 +136,7 @@ formulario.addEventListener('submit', validarFormulario)
 
         for(i=0; i<contraseña1.value.length; i++){
             if(contraseña1.value.charCodeAt(i) >= 65 && contraseña1.value.charCodeAt(i) <=90) {
-                console.log('entre')
+                
                 errorMayMin.style.display = 'none'
             }else {
                 

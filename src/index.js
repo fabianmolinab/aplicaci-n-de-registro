@@ -1,4 +1,6 @@
-//(function(){
+import './styles/registro.css';
+import './styles/normalize.css';
+(function(){
 //Variables de los campos
     let formulario = document.querySelector('#formulario'),
         nombre = document.querySelector('#nombre'),
@@ -219,4 +221,4 @@ formulario.addEventListener('submit', validarFormulario)
         validarCaracteresEsp(e)
     }
 
-//})
+})

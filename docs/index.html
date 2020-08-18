@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600&display=swap" rel="stylesheet">
+    <title>Registro</title>
+</head>
+<body>
+    <div class="contenedor">
+        <img src="assets/undraw_access_account_99n5.svg" alt="">
+    
+        <form action="#" class="formulario" id="formulario">
+            <input type="text" class="nombre" id="nombre" placeholder="Nombre Completo" required>
+            <div class="contenedor-interior">
+                <input type="email" class="correo" id="correo-1" placeholder="Cuenta de Correo"
+                required>
+                <input type="email" class="correo" id="correo-2" placeholder="Confirme su Correo" required >
+                <input type="password" class="contraseña" id="contraseña-1" placeholder="Contraseña" required> 
+                
+                <input type="password" class="contraseña" id="contraseña-2" placeholder="Confirme su Contraseña" required>
+                
+            </div>
+            <input type="checkbox" name="condiciones" class="condiciones" id="condiciones">
+            <label for="condiciones">Terminos y condiciones <a href="#">Leer mas</a></label>
+            <button class="btn" id="btn">Registrate</button>
+            <!--Zona de errores-->
+                
+                <span class="error" id="error-blanco">Llene todos los campos</span>
+                <span class="error" id="correo-noIgual">Los correos no coincide</span>
+                <span class="error" id="contraseña-noIgual">Las contraseñas no conincide</span>
+                <span class="error" id="error-terminos">Seleccione los terminos y condiciones</span>
+                <span class="error" id="error-numeros">La contraseña debe incluir numeros</span>
+                <span class="error" id="error-maymin">La contraseña debe incluir letras mayusculas y minusculas</span>
+                <span class="error" id="error-especial">La contraseña debe contener caracteres especiales - , . ; : * ? ! = # $ / () {} []</span>
+                <span class="error" id="error-caracteres">La contraseña debe contener como minimo 8 caracteres</span>
+                <span class="error" id="error-espacios">La constraseña no debe contener espacios en blanco</span>
+            </div>
+        </form>
+            
+        </div>
+    </div>
+    
+<script type="text/javascript" src="main.41fe8cb11e65b973e4a5.js"></script></body>
+</html>
